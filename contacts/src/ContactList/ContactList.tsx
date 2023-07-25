@@ -9,7 +9,7 @@ function ContactList({
 
   return (
     <table className="w-full border-separate">
-        <thead className="sticky top-16 z-10 bg-white border-b">
+        <thead className="top-16 z-10 bg-white border-b">
         <tr>
             <th className="w-1/2 text-left font-normal py-3 border-b px-4">
                 Name

@@ -13,7 +13,7 @@ function App() {
       .then((json) => setContacts(json));
   }, []);
   return (
-    <div>
+    <div className={"px-4"}>
       <Header />
       <ContactList contacts={contacts} />
     </div>

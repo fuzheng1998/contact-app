@@ -29,7 +29,7 @@ function ListItem({
         <>
             <tr
                 role="button"
-                className="hover:bg-[#f5f5f5] group"
+                className="hover:bg-[#f5f5f5] group h-16 cursor-pointer"
                 onClick={() => setIsOpen(true)}
             >
                 <td className="gap-5 px-4">{name}
