@@ -2,6 +2,7 @@ import "./App.css";
 import ContactList from "../ContactList";
 import { Contact } from "../types/contact";
 import { useEffect, useState } from "react";
+import Header from "../components/Header";
 function App() {
   const [contacts, setContacts] = useState<Array<Contact>>(
     [] as Array<Contact>
@@ -13,6 +14,7 @@ function App() {
   }, []);
   return (
     <div>
+      <Header />
       <ContactList contacts={contacts} />
     </div>
   );
