@@ -2,6 +2,8 @@ import {Dialog, Transition} from '@headlessui/react'
 import {Fragment} from "react";
 import {Address, Company} from "../../../types/contact";
 import DetailCard from "./components/DetailCard";
+import {getFullAddress} from "../../../utils/getFullAddress";
+import {BriefcaseIcon, EnvelopeIcon, HomeIcon, LinkIcon, PhoneIcon} from "@heroicons/react/24/outline";
 
 interface DialogProps {
     isOpen: boolean;
@@ -18,7 +20,14 @@ interface DialogProps {
 
 function DetailDialog({
                           isOpen,
-                          onClose
+                          onClose,
+                          name,
+                          username,
+                          email,
+                          phone,
+                          website,
+                          address,
+                          company
 
                       }: DialogProps) {
     return (
@@ -52,13 +61,44 @@ function DetailDialog({
                             <Dialog.Panel
                                 className="flex flex-col w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                                 <Dialog.Title
-                                    as="h3"
+                                    as="h2"
                                     className="text-2xl leading-6 text-zinc-800 text-center"
                                 >
-                                    Leanne Graham
+                                    {name}
                                 </Dialog.Title>
-                                <DetailCard label={"Name"} value={"Leanne Graham"}/>
-                                <DetailCard label={"Username"} value={"Bret"}/>
+                                <h3 className={'text-center'}>@{username}</h3>
+                                <ul className={
+                                    "flex flex-col gap-4 mt-4"
+                                }>
+                                    <DetailCard title={"email"} value={email} label={
+                                        <EnvelopeIcon className={"h-5 w-5"}/>
+                                    }/>
+                                    <DetailCard title={"phone"}
+                                                value={phone}
+                                                label={
+                                                    <PhoneIcon className={"h-5 w-5"}/>
+                                                }
+                                    />
+                                    <DetailCard title={"website"}
+                                                value={website}
+                                                label={
+                                                    <LinkIcon className={"h-5 w-5"}/>
+                                                }
+                                    />
+                                    <DetailCard title={"address"}
+                                                value={getFullAddress(address)}
+                                                label={
+                                                    <HomeIcon className={"h-5 w-5"}/>
+                                                }
+                                    />
+                                    <DetailCard title={"company"} value={
+                                        company.name
+                                    }
+                                                label={
+                                                    <BriefcaseIcon className={"h-5 w-5"}/>
+                                                }
+                                    />
+                                </ul>
 
                                 <div className="mt-4">
                                     <button
