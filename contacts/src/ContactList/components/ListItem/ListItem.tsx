@@ -1,6 +1,7 @@
 import {Address, Company} from "../../../types/contact";
 import Dialog from "../Dialog/DetailDialog";
 import {useState} from "react";
+import classNames from "classnames";
 
 interface ListItemProps {
     id: number;
@@ -29,7 +30,7 @@ function ListItem({
         <>
             <tr
                 role="button"
-                className="hover:bg-[#f5f5f5] group h-16 cursor-pointer"
+                className={classNames("hover:bg-[#f5f5f5] group h-16 cursor-pointer")}
                 onClick={() => setIsOpen(true)}
             >
                 <td className="gap-5 px-4">{name}
