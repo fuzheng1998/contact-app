@@ -3,6 +3,7 @@ import ListItem from "./components/ListItem";
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import { parsePhoneNumber } from "../utils/phoneNumParser";
+import { parseEmail } from "../utils/emailParser";
 
 function ContactList() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -56,7 +57,7 @@ function ContactList() {
                   id={id}
                   name={name}
                   username={username}
-                  email={email}
+                  email={parseEmail(email)}
                   address={address}
                   phone={parsePhoneNumber(phone)}
                   website={website}
