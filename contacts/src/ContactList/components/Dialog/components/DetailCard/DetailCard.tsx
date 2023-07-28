@@ -19,7 +19,7 @@ function DetailCard({
                 }>{title}</p>
                 <div className={"flex gap-3 mb-1 pt-1"}>
                     {label}
-                    <p className={"text-gray-500 lowercase"}>{value}</p>
+                    <p className={"text-gray-500"}>{value}</p>
                 </div>
 
         </li>
