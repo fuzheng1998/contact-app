@@ -32,7 +32,7 @@ function ContactList() {
               <th className="w-1/2 text-left font-semibold py-3 border-b px-4">
                 Name
               </th>
-              <th className="w-1/2 text-left font-semibold py-3 border-b px-4">
+              <th className="hidden md:table-cell w-1/2 text-left font-semibold py-3 border-b px-4">
                 Phone Number
               </th>
               <th className="w-1/2 text-left font-semibold py-3 border-b px-4">

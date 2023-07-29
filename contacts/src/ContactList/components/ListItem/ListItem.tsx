@@ -34,7 +34,7 @@ function ListItem({
         onClick={() => setIsOpen(true)}
       >
         <td className="gap-5 px-4">{name}</td>
-        <td className="gap-5 px-4">{phone}</td>
+        <td className="hidden md:table-cell gap-5 px-4">{phone}</td>
         <td className="gap-5 px-4">{email}</td>
       </tr>
       <Dialog
